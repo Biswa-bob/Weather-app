@@ -7,6 +7,7 @@ const app = express();
 const pathDirectory = path.join(__dirname, "../public");
 const viewPath = path.join(__dirname, "../templates/views");
 const partialsPath = path.join(__dirname, "../templates/partials");
+const port = process.env.PORT || 3000;
 
 app.set("view engine", "hbs");
 app.set("views", viewPath);
@@ -55,6 +56,6 @@ app.get("/weather", (req, res) => {
   res.send("Welcome to weather page");
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("Server is running on 3000! ");
 });
